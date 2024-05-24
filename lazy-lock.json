@@ -1,11 +1,9 @@
 {
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
-  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "fa13fd6845e8353bde234add01a0aabe6da581ab" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "gitsigns.nvim": { "branch": "main", "commit": "805610a9393fa231f2c2b49cb521bfa413fadb3d" },
-  "indent-blankline.nvim": { "branch": "master", "commit": "171d4d5a1560ccb556e94aa6df7e969068384049" },
   "lazy.nvim": { "branch": "main", "commit": "8f19915175395680808de529e4220da8dafc0759" },
   "leap.nvim": { "branch": "main", "commit": "b1ecfb63c0b8babfd0dcd6b5ca6de37bbf3526cd" },
   "lspkind.nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },
@@ -32,5 +30,6 @@
   "trouble.nvim": { "branch": "dev", "commit": "205d6511dee33bc48ba3786f3fb96801f7885eb2" },
   "vim-fugitive": { "branch": "master", "commit": "19ca61c78c86a2ce6a425aee9b1c6664e5149ea6" },
   "vim-markdown": { "branch": "master", "commit": "a657e697376909c41475a686eeef7fc7a4972d94" },
-  "vim-rescript": { "branch": "master", "commit": "2065f4e1d319ffd4ff7046879f270ebbadda873e" }
+  "vim-rescript": { "branch": "master", "commit": "2065f4e1d319ffd4ff7046879f270ebbadda873e" },
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
