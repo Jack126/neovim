@@ -285,3 +285,5 @@ require("lazy").setup({
         }
     },
 })
+
+require("config.autosave")
