@@ -78,7 +78,8 @@ require("lazy").setup({
         version = "v2.*",
     },
     -- Colorscheme
-    "tanvirtin/monokai.nvim",
+    -- "tanvirtin/monokai.nvim",
+    "EdenEast/nightfox.nvim",
     -- Better UI
     -- Run `:checkhealth noice` to check for common issues
     {
