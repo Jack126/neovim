@@ -21,6 +21,7 @@ mason_null_ls.setup({
 	-- A list of sources to install if they're not already installed.
 	-- This setting has no relation with the `automatic_installation` setting.
 	ensure_installed = {
+        "prettier",
 		"black",
 		"stylua",
 	},
@@ -37,6 +38,11 @@ mason_null_ls.setup({
 		-- Hint: see https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
 		--       to check what we can configure for each source
 		-- function() end, -- disables automatic setup of all null-ls sources
+        prettier = function(source_name, methods)
+			null_ls.register(null_ls.builtins.formatting.prettier.with({
+                filetypes ={ "php","javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "svelte", "astro" },
+            }))
+		end,
 		black = function(source_name, methods)
 			null_ls.register(null_ls.builtins.formatting.black)
 		end,
