@@ -1,0 +1,1 @@
+使用本地prettier 替代 mason自动安装prettier
