@@ -1,7 +1,7 @@
 -- Define common options
 local opts = {
     noremap = true, -- non-recursive
-    silent = true, -- do not show message
+    silent = true,  -- do not show message
 }
 
 -----------------
@@ -25,6 +25,9 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- For nvim-tree.lua
 -- default leader key: \
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- split
+vim.keymap.set("n", "<leader>sp", ":vsplit<CR>", opts)
 
 -----------------
 -- Visual mode --

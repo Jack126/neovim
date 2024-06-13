@@ -3,6 +3,7 @@ if not is_ok then
     return
 end
 
+
 gitsigns.setup {
     signs                        = {
         add          = { text = '│' },
