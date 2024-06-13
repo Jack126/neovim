@@ -27,7 +27,8 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- split
-vim.keymap.set("n", "<leader>sp", ":vsplit<CR>", opts)
+vim.keymap.set("n", "<leader>sp", ":split<CR>", opts)
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", opts)
 
 -----------------
 -- Visual mode --

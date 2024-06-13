@@ -285,6 +285,15 @@ require("lazy").setup({
             -- refer to the configuration section below
         }
     },
+    {
+        'akinsho/bufferline.nvim',
+        event = { 'BufNewFile', 'BufRead', 'TabEnter' },
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('config.bufferline')
+        end,
+
+    },
 })
 
 require("config.autosave")
