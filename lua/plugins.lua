@@ -294,6 +294,14 @@ require("lazy").setup({
         end,
 
     },
+    -- rust analyzer tool
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^4', -- Recommended
+        lazy = false, -- This plugin is already lazy
+      }
 })
 
 require("config.autosave")
+
+require("config.rustaceanvim")

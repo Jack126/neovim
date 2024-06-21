@@ -11,7 +11,9 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { "pylsp", "lua_ls", "bashls", "rust_analyzer", "phpactor", "rescriptls", "tsserver" },
+    ensure_installed = { "pylsp", "lua_ls", "bashls",
+     -- "rust_analyzer",
+      "phpactor", "rescriptls", "tsserver" },
 })
 
 -- Set different settings for different languages' LSP
@@ -105,9 +107,9 @@ lspconfig.lua_ls.setup({
 lspconfig.bashls.setup({})
 
 -- source: https://rust-analyzer.github.io/manual.html#nvim-lsp
-lspconfig.rust_analyzer.setup({
-    on_attach = on_attach,
-})
+-- lspconfig.rust_analyzer.setup({
+--     on_attach = on_attach,
+-- })
 
 lspconfig.clangd.setup({
     on_attach = on_attach,
