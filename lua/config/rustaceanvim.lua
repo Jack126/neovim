@@ -8,7 +8,13 @@ vim.keymap.set(
   end,
   { silent = true, buffer = bufnr }
 )
-
+vim.keymap.set("n", "<space>f", 
+    function ()
+        vim.cmd.RustFmt()
+        vim.fn.execute("silent! write")
+    end,
+    {}
+)
 vim.g.rustaceanvim = {
     -- Plugin configuration
     tools = {
@@ -22,7 +28,7 @@ vim.g.rustaceanvim = {
         -- rust-analyzer language server configuration
         ["rust-analyzer"] = {
             ["cargo.targetDir"] = true,
-            ["rustfmt.overrideCommand"] = { "leptosfmt", "--stdin", "--rustfmt" },
+            -- ["rustfmt.overrideCommand"] = { "rustfmt"},
             -- Additional settings appended here
             cargo = {
                 allFeatures = true,
