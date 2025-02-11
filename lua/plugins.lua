@@ -34,16 +34,33 @@ vim.opt.rtp:prepend(lazypath)
 --     opts: The table will be passed to the require(...).setup(opts)
 require("lazy").setup({
     -- LSP manager
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    {
+        "williamboman/mason.nvim",
+        url = "git@github.com:williamboman/mason.nvim.git"
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        url = "git@github.com:williamboman/mason-lspconfig.nvim.git"
+    },
+    {
+        "neovim/nvim-lspconfig",
+        url = "git@github.com:neovim/nvim-lspconfig.git"
+
+    },
     -- Add hooks to LSP to support Linter && Formatter
     {
         "jay-babu/mason-null-ls.nvim",
+        url = "git@github.com:jay-babu/mason-null-ls.nvim.git",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "williamboman/mason.nvim",
+            {
+                "williamboman/mason.nvim",
+                url = "git@github.com:williamboman/mason.nvim.git",
+            }, {
             "nvimtools/none-ls.nvim",
+            url = "git@github.com:nvimtools/none-ls.nvim.git",
+
+        }
         },
         config = function()
             -- Note:
@@ -56,17 +73,39 @@ require("lazy").setup({
     -- Vscode-like pictograms
     {
         "onsails/lspkind.nvim",
+        url = "git@github.com:onsails/lspkind.nvim.git",
+
         event = { "VimEnter" },
     },
     -- Auto-completion engine
     {
         "hrsh7th/nvim-cmp",
+        url = "git@github.com:hrsh7th/nvim-cmp.git",
         dependencies = {
-            "lspkind.nvim",
-            "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
-            "hrsh7th/cmp-buffer",   -- buffer auto-completion
-            "hrsh7th/cmp-path",     -- path auto-completion
-            "hrsh7th/cmp-cmdline",  -- cmdline auto-completion
+            {
+                "lspkind.nvim",
+                url = "git@github.com:lspkind.nvim.git",
+            },
+            {
+                "hrsh7th/cmp-cmdline",
+                url = "git@github.com:hrsh7th/cmp-cmdline.git",
+
+            },
+            {
+                "hrsh7th/cmp-nvim-lsp",
+                url = "git@github.com:hrsh7th/cmp-nvim-lsp.git",
+
+            },
+            {
+                "hrsh7th/cmp-buffer",
+                url = "git@github.com:hrsh7th/cmp-buffer.git",
+
+            },
+            {
+                "hrsh7th/cmp-path",
+                url = "git@github.com:hrsh7th/cmp-path.git",
+
+            },
         },
         config = function()
             require("config.nvim-cmp")
@@ -75,33 +114,48 @@ require("lazy").setup({
     -- Code snippet engine
     {
         "L3MON4D3/LuaSnip",
+        url = "git@github.com:L3MON4D3/LuaSnip.git",
         version = "v2.*",
     },
     -- Colorscheme
     -- "tanvirtin/monokai.nvim",
-    "EdenEast/nightfox.nvim",
+    {
+        "EdenEast/nightfox.nvim",
+        url = "git@github.com:EdenEast/nightfox.nvim.git",
+    },
     -- Better UI
     -- Run `:checkhealth noice` to check for common issues
     {
         "folke/noice.nvim",
+        url = "git@github.com:folke/noice.nvim.git",
         event = "VeryLazy",
         opts = {
             -- add any options here
         },
         dependencies = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
+            {
+                "MunifTanjim/nui.nvim",
+                url = "git@github.com:MunifTanjim/nui.nvim.git",
+            },
             -- OPTIONAL:
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
+            {
+                "rcarriga/nvim-notify",
+                url = "git@github.com:rcarriga/nvim-notify.git",
+            }
         },
     },
     -- Git integration
-    "tpope/vim-fugitive",
+    {
+        "tpope/vim-fugitive",
+        url = "git@github.com:tpope/vim-fugitive.git",
+    },
     -- Git decorations
     {
         "lewis6991/gitsigns.nvim",
+        url = "git@github.com:lewis6991/gitsigns.nvim.git",
         config = function()
             require("config.gitsigns")
         end,
@@ -109,6 +163,7 @@ require("lazy").setup({
     -- Autopairs: [], (), "", '', etc
     {
         "windwp/nvim-autopairs",
+        url = "git@github.com:windwp/nvim-autopairs.git",
         event = "InsertEnter",
         config = function()
             require("config.nvim-autopairs")
@@ -117,6 +172,7 @@ require("lazy").setup({
     -- Treesitter-integration
     {
         "nvim-treesitter/nvim-treesitter",
+        url = "git@github.com:nvim-treesitter/nvim-treesitter.git",
         build = ":TSUpdate",
         config = function()
             require("config.nvim-treesitter")
@@ -125,7 +181,8 @@ require("lazy").setup({
     -- Nvim-treesitter text objects
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        dependencies = "nvim-treesitter/nvim-treesitter",
+        url = "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git",
+        dependencies = { "nvim-treesitter/nvim-treesitter", url = "git@github.com:nvim-treesitter/nvim-treesitter.git", },
         config = function()
             require("config.nvim-treesitter-textobjects")
         end,
@@ -133,6 +190,7 @@ require("lazy").setup({
     -- Show indentation and blankline
     {
         "lukas-reineke/indent-blankline.nvim",
+        url = "git@github.com:lukas-reineke/indent-blankline.nvim.git",
         main = "ibl",
         config = function()
             require("config.indent-blankline")
@@ -141,16 +199,18 @@ require("lazy").setup({
     -- Status line
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        url = "git@github.com:nvim-lualine/lualine.nvim.git",
+        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", },
         config = function()
             require("config.lualine")
         end,
     },
     -- Markdown support
-    { "preservim/vim-markdown",     ft = { "markdown" } },
+    { "preservim/vim-markdown", url = "git@github.com:preservim/vim-markdown.git", ft = { "markdown" } },
     -- Markdown previewer
     {
         "iamcco/markdown-preview.nvim",
+        url = "git@github.com:iamcco/markdown-preview.nvim.git",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function()
@@ -160,8 +220,12 @@ require("lazy").setup({
     -- File explorer
     {
         "nvim-tree/nvim-tree.lua",
+        url = "git@github.com:nvim-tree/nvim-tree.lua.git",
         dependencies = {
-            "nvim-tree/nvim-web-devicons", -- optional, for file icons
+            {
+                "nvim-tree/nvim-web-devicons", -- optional, for file icons
+                url = "git@github.com:nvim-tree/nvim-web-devicons.git",
+            }
         },
         config = function()
             require("config.nvim-tree")
@@ -173,6 +237,7 @@ require("lazy").setup({
     --        Initiate the sesarch with `s`(forward) or `S`(backward)
     {
         "ggandor/leap.nvim",
+        url = "git@github.com:ggandor/leap.nvim.git",
         config = function()
             -- See `:h leap-custom-mappings` for more details
             require("leap").create_default_mappings()
@@ -191,6 +256,7 @@ require("lazy").setup({
     -- ------------------------------------------------------------------
     {
         "kylechui/nvim-surround",
+        url = "git@github.com:kylechui/nvim-surround.git",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         -- You can use the VeryLazy event for things that can
         -- load later and are not important for the initial UI
@@ -217,6 +283,7 @@ require("lazy").setup({
     -- Better terminal integration
     {
         "akinsho/toggleterm.nvim",
+        url = "git@github.com:akinsho/toggleterm.nvim.git",
         version = "*",
         config = function()
             require("config.toggleterm")
@@ -225,16 +292,18 @@ require("lazy").setup({
     -- Fuzzy finder
     {
         "nvim-telescope/telescope.nvim",
+        url = "git@github.com:nvim-telescope/telescope.nvim.git",
         branch = "0.1.x",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = { { "nvim-lua/plenary.nvim", url = "git@github.com:nvim-lua/plenary.nvim.git", } },
         config = function()
             require("config.telescope")
         end,
     },
     {
         "folke/trouble.nvim",
+        url = "git@github.com:folke/trouble.nvim.git",
         branch = "dev",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", } },
         keys = {
             {
                 "<leader>xx",
@@ -271,9 +340,14 @@ require("lazy").setup({
             require("config.trouble")
         end,
     },
-    { 'rescript-lang/vim-rescript', ft = "rescript" },
+    {
+        'rescript-lang/vim-rescript',
+        ft = "rescript",
+        url = "git@github.com:rescript-lang/vim-rescript.git"
+    },
     {
         "folke/which-key.nvim",
+        url = "git@github.com:folke/which-key.nvim.git",
         event = "VeryLazy",
         init = function()
             vim.o.timeout = true
@@ -287,6 +361,7 @@ require("lazy").setup({
     },
     {
         'akinsho/bufferline.nvim',
+        url = "git@github.com:akinsho/bufferline.nvim.git",
         event = { 'BufNewFile', 'BufRead', 'TabEnter' },
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
@@ -297,11 +372,11 @@ require("lazy").setup({
     -- rust analyzer tool
     {
         'mrcjkb/rustaceanvim',
+        url = "git@github.com:mrcjkb/rustaceanvim.git",
         version = '^4', -- Recommended
-        lazy = false, -- This plugin is already lazy
-      }
+        lazy = false,   -- This plugin is already lazy
+    }
 })
 
 require("config.autosave")
-
 require("config.rustaceanvim")
