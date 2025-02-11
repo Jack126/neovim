@@ -83,10 +83,6 @@ require("lazy").setup({
         url = "git@github.com:hrsh7th/nvim-cmp.git",
         dependencies = {
             {
-                "lspkind.nvim",
-                url = "git@github.com:lspkind.nvim.git",
-            },
-            {
                 "hrsh7th/cmp-cmdline",
                 url = "git@github.com:hrsh7th/cmp-cmdline.git",
 
