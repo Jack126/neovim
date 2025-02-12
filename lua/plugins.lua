@@ -196,7 +196,7 @@ require("lazy").setup({
     {
         "nvim-lualine/lualine.nvim",
         url = "git@github.com:nvim-lualine/lualine.nvim.git",
-        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", },
+        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", branch="0.1.x"},
         config = function()
             require("config.lualine")
         end,
@@ -221,6 +221,7 @@ require("lazy").setup({
             {
                 "nvim-tree/nvim-web-devicons", -- optional, for file icons
                 url = "git@github.com:nvim-tree/nvim-web-devicons.git",
+                branch="0.1.x"
             }
         },
         config = function()
@@ -299,7 +300,7 @@ require("lazy").setup({
         "folke/trouble.nvim",
         url = "git@github.com:folke/trouble.nvim.git",
         branch = "dev",
-        dependencies = { { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", } },
+        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", branch="0.1.x" },
         keys = {
             {
                 "<leader>xx",
@@ -359,7 +360,11 @@ require("lazy").setup({
         'akinsho/bufferline.nvim',
         url = "git@github.com:akinsho/bufferline.nvim.git",
         event = { 'BufNewFile', 'BufRead', 'TabEnter' },
-        dependencies = 'nvim-tree/nvim-web-devicons',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            branch="0.1.x",
+            url="git@github.com:nvim-tree/nvim-web-devicons.git",
+        },
         config = function()
             require('config.bufferline')
         end,

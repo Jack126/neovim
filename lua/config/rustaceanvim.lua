@@ -13,7 +13,7 @@ vim.keymap.set("n", "<space>f",
         vim.cmd.RustFmt()
         vim.fn.execute("silent! write")
     end,
-    {}
+    {desc="Format"}
 )
 vim.g.rustaceanvim = {
     -- Plugin configuration
