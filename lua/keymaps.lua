@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", opts)
 -----------------
 -- Visual mode --
 -----------------
-
+vim.keymap.set("n", "<space>s", ":w<CR>", opts,{desc="Save"})
 -- Hint: start visual mode with the same area as the previous area and the same mode
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
