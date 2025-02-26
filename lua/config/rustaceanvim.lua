@@ -6,7 +6,7 @@ vim.keymap.set(
     vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
     -- or vim.lsp.buf.codeAction() if you don't want grouping.
   end,
-  { silent = true, buffer = bufnr }
+  { silent = true, buffer = bufnr ,desc="codeAction"}
 )
 vim.keymap.set("n", "<space>f", 
     function ()
