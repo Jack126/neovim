@@ -149,13 +149,13 @@ require("lazy").setup({
         url = "git@github.com:tpope/vim-fugitive.git",
     },
     -- Git decorations
-    {
-        "lewis6991/gitsigns.nvim",
-        url = "git@github.com:lewis6991/gitsigns.nvim.git",
-        config = function()
-            require("config.gitsigns")
-        end,
-    },
+    -- {
+    --     "lewis6991/gitsigns.nvim",
+    --     url = "git@github.com:lewis6991/gitsigns.nvim.git",
+    --     config = function()
+    --         require("config.gitsigns")
+    --     end,
+    -- },
     -- Autopairs: [], (), "", '', etc
     {
         "windwp/nvim-autopairs",
