@@ -13,7 +13,7 @@ require("mason-lspconfig").setup({
     -- A list of servers to automatically install if they're not already installed
     ensure_installed = { "pylsp", "lua_ls", "bashls",
      -- "rust_analyzer",
-      "phpactor", "rescriptls", "tsserver" },
+       "rescriptls", "tsserver","gopls" },
 })
 
 -- Set different settings for different languages' LSP
@@ -77,7 +77,7 @@ lspconfig.pylsp.setup({
 })
 
 lspconfig.gopls.setup({
-    on_attach = on_attach,
+    on_attach = on_attach
 })
 
 lspconfig.lua_ls.setup({
@@ -119,10 +119,3 @@ lspconfig.ocamllsp.setup({
     on_attach = on_attach,
 })
 
-lspconfig.phpactor.setup {
-    on_attach = on_attach,
-    init_options = {
-        ["language_server_phpstan.enabled"] = false,
-        ["language_server_psalm.enabled"] = false,
-    }
-}

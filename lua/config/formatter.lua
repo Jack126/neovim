@@ -9,6 +9,14 @@ if present then
         }
     end
 
+    local goimports = function()
+        return {
+            exe = 'goimports',
+            args = { '-w', vim.fn.shellescape(vim.api.nvim_buf_get_name(0)) },
+            stdin = false,
+        }
+    end
+
     formatter.setup({
         logging = true,
         log_level = vim.log.levels.WARN,
@@ -27,7 +35,6 @@ if present then
             typescriptreact = { prettier },
             markdown = { prettier },
             json = { prettier },
-            php = { prettier },
             python = { prettier },
             jsonc = { prettier },
             rust = {

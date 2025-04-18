@@ -149,13 +149,13 @@ require("lazy").setup({
         url = "git@github.com:tpope/vim-fugitive.git",
     },
     -- Git decorations
-    -- {
-    --     "lewis6991/gitsigns.nvim",
-    --     url = "git@github.com:lewis6991/gitsigns.nvim.git",
-    --     config = function()
-    --         require("config.gitsigns")
-    --     end,
-    -- },
+    {
+        "lewis6991/gitsigns.nvim",
+        url = "git@github.com:lewis6991/gitsigns.nvim.git",
+        config = function()
+            require("config.gitsigns")
+        end,
+    },
     -- Autopairs: [], (), "", '', etc
     {
         "windwp/nvim-autopairs",
@@ -196,7 +196,7 @@ require("lazy").setup({
     {
         "nvim-lualine/lualine.nvim",
         url = "git@github.com:nvim-lualine/lualine.nvim.git",
-        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", branch="0.1.x"},
+        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git",},
         config = function()
             require("config.lualine")
         end,
@@ -221,7 +221,7 @@ require("lazy").setup({
             {
                 "nvim-tree/nvim-web-devicons", -- optional, for file icons
                 url = "git@github.com:nvim-tree/nvim-web-devicons.git",
-                branch="0.1.x"
+               
             }
         },
         config = function()
@@ -300,7 +300,7 @@ require("lazy").setup({
         "folke/trouble.nvim",
         url = "git@github.com:folke/trouble.nvim.git",
         branch = "dev",
-        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", branch="0.1.x" },
+        dependencies = { "nvim-tree/nvim-web-devicons", url = "git@github.com:nvim-tree/nvim-web-devicons.git", },
         keys = {
             {
                 "<leader>xx",
@@ -362,7 +362,6 @@ require("lazy").setup({
         event = { 'BufNewFile', 'BufRead', 'TabEnter' },
         dependencies = {
             'nvim-tree/nvim-web-devicons',
-            branch="0.1.x",
             url="git@github.com:nvim-tree/nvim-web-devicons.git",
         },
         config = function()
@@ -376,7 +375,7 @@ require("lazy").setup({
         url = "git@github.com:mrcjkb/rustaceanvim.git",
         version = '^4', -- Recommended
         lazy = false,   -- This plugin is already lazy
-    }
+    },
 })
 
 require("config.autosave")

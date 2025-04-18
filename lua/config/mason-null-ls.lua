@@ -40,7 +40,7 @@ mason_null_ls.setup({
         -- function() end, -- disables automatic setup of all null-ls sources
         prettier = function(source_name, methods)
             null_ls.register(null_ls.builtins.formatting.prettier.with({
-                filetypes = { "php", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "svelte", "astro" },
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "svelte", "astro" },
             }))
         end,
         black = function(source_name, methods)
