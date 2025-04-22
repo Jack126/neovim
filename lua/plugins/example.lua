@@ -106,6 +106,43 @@ return {
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
+        gopls = {
+            settings = {
+              gopls = {
+                gofumpt = true, -- 启用更严格的格式化
+                analyses = {
+                  unusedparams = true,
+                },
+                staticcheck = true,
+              },
+            },
+        },
+        -- pyright = {
+        --     settings = {
+        --       python = {
+        --         analysis = {
+        --           typeCheckingMode = "strict", -- 严格类型检查
+        --           autoSearchPaths = true,
+        --           useLibraryCodeForTypes = true,
+        --           diagnosticMode = "workspace", -- 更强的类型推断
+        --         },
+        --         formatting = {
+        --           provider = "black", -- 可选：black / autopep8 / yapf
+        --         },
+        --       },
+        --     },
+        -- },
+        pylsp = {
+            settings = {
+              pylsp = {
+                plugins = {
+                  black = { enabled = true },
+                  autopep8 = { enabled = false },
+                  yapf = { enabled = false }
+                }
+              }
+            }
+          }
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
